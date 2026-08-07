@@ -1,13 +1,19 @@
 function GameCard({ game }) {
     return (
-        <div>
+        <article className="game">
+            <img src={game.imageUrl} alt={game.title} />
+
             <h3>{game.title}</h3>
+
             <p>Sprog: {game.language}</p>
             <p>Stand: {game.condition}</p>
             <p>Antal gange spillet: {game.timesPlayed}</p>
-            <p className="price">{game.price} kr.</p>
-        </div>
+
+            <p className="price">
+                {game.price} kr.
+            </p>
+        </article>
     );
 }
 
-export default GameCard
+export default GameCard;
