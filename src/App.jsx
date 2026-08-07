@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import GameList from './GameList.jsx'
-import { supabase } from './supabaseClient.js'
+import GameList from './components/GameList.jsx'
+import { getGames } from './services/games.js'
+
 
 function Welcome(props) {
   return (
@@ -15,20 +16,12 @@ function App() {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    async function getGames() {
-      const { data, error } = await supabase
-        .from("games")
-        .select("*")
-      
-      if (error) {
-        console.error(error)
-        return
-      }
-
-      setGames(data)
+    async function loadGames() {
+      const data = await getGames();
+      setGames(data);
     }
 
-    getGames()
+    loadGames();
   }, [])
 
   return (
@@ -44,8 +37,8 @@ function App() {
       <Welcome name="Ida" />
 
       <GameList games={games} />
-      
-      
+
+
     </>
   )
 }
