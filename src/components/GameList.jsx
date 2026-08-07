@@ -1,8 +1,8 @@
 import GameCard from './GameCard.jsx'
 
-function GameList({ games }) {
+function GameList({ games = [] }) {
     const listGames = games.map(game =>
-            <GameCard key={game.title} game={game} />
+        <GameCard key={game.id} game={game} />
     );
     return <ul>{listGames}</ul>
 }
