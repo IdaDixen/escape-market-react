@@ -4,7 +4,11 @@ function GameList({ games = [] }) {
     const listGames = games.map(game =>
         <GameCard key={game.id} game={game} />
     );
-    return <ul>{listGames}</ul>
+    return (
+        <div className='game-list'>
+            {listGames}
+        </div>
+    );
 }
 
 export default GameList

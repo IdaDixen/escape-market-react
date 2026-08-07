@@ -1,4 +1,94 @@
-.counter {
+
+
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.game {
+    padding: 20px;
+    background-color: #d4cfb7;
+    border: 0px solid #e6e6b4;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 200px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.game img {
+    width: 100%;
+    height: auto;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 22px;
+    color: #c07e7e;
+}
+
+/*@media (min-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    main {
+        padding: 10px;
+    }
+    .game {
+        padding: 10px;
+        width: 100%;
+    }
+    .game-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}*/
+
+
+
+/* SUGGESTION FOR NEW CSS
+  body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.game {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #808000;
+  border-radius: 30px;
+  width: 250px;
+}
+
+.game img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+} */
+
+
+/* DEFAULT CSS:
+  .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -182,3 +272,4 @@
     border-right-color: var(--border);
   }
 }
+ */
