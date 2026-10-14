@@ -1,44 +1,27 @@
-import { useEffect, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import GameList from './components/GameList.jsx'
-import { getGames } from './services/games.js'
-
-
-function Welcome(props) {
-  return (
-    <p>Velkommen, {props.name}!</p>
-  )
-}
+import Header from './components/Header.jsx'
+import Navigation from './components/Navigation.jsx'
+import HomePage from './pages/Home.jsx'
+import BuyPage from './pages/BuyGames.jsx'
+import SellPage from './pages/SellGame.jsx'
+import TradePage from './pages/TradeCenter.jsx'
+import AboutPage from './pages/About.jsx'
 
 
 function App() {
-
-  const [games, setGames] = useState([]);
-
-  useEffect(() => {
-    async function loadGames() {
-      const data = await getGames();
-      setGames(data);
-    }
-
-    loadGames();
-  }, [])
-
   return (
     <>
-      <section>
-        <div>
-          <h1>Escape Market</h1>
-          <p>
-            Unlock new adventures! Køb, sælg eller byt brugte escape room spil.
-          </p>
-        </div>
-      </section>
-      <Welcome name="Ida" />
+      <Header />
+      <Navigation />
 
-      <GameList games={games} />
-
-
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/buy' element={<BuyPage />} />
+        <Route path='/sell' element={<SellPage />} />
+        <Route path='/trade' element={<TradePage />} />
+        <Route path='/about' element={<AboutPage />} />
+      </Routes>
     </>
   )
 }
